@@ -10,7 +10,7 @@ def test_york_is_recognised():
         response = client.http.get('/location?place=York')
         actual = response.body.decode("UTF-8")
         assert "York" in actual
-        assert "viking" in actual
+        assert "unitary" in actual
 
 def test_cambridge_is_recognised():
     with Client(app) as client:
