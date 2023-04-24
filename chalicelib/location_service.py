@@ -5,4 +5,7 @@ def information_about(place):
         return "Oxford is home to the University of Oxford, the oldest university in the English-speaking world"
     if place == "Cambridge":
         return "Cambridge is home to the University of Cambridge, the second-oldest university in the English-speaking world"
+    if place == "York":
+        return "York is a city and unitary authority area in North Yorkshire, England"
+
     return f"Unknown place: {place}"
