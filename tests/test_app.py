@@ -4,6 +4,12 @@ import string
 from chalice.test import Client
 from app import app
 
+def test_cambridge_is_recognised():
+    with Client(app) as client:
+        response = client.http.get('/location?place=Cambridge')
+        actual = response.body.decode("UTF-8")
+        assert "Cambridge" in actual
+        assert "university" in actual
 
 def test_london_is_recognised():
     with Client(app) as client:
