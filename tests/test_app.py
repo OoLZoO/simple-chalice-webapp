@@ -4,6 +4,14 @@ import string
 from chalice.test import Client
 from app import app
 
+# add test for york
+def test_york_is_recognised():
+    with Client(app) as client:
+        response = client.http.get('/location?place=York')
+        actual = response.body.decode("UTF-8")
+        assert "York" in actual
+        assert "viking" in actual
+
 def test_cambridge_is_recognised():
     with Client(app) as client:
         response = client.http.get('/location?place=Cambridge')
